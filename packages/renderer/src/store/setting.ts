@@ -2,6 +2,8 @@ import { useLocalStorage } from '@vueuse/core'
 import { defineStore } from 'pinia'
 
 import { PLAYING_MODE } from '@/util/enum'
+import type { HotKey } from '@/util/metadata'
+import { hotkeys } from '@/util/metadata'
 
 export enum APPEARANCE {
   LIGHT = 'light',
@@ -41,6 +43,7 @@ export interface SettingState {
   account: Record<string, string>
   visualization: boolean
   exitMode: ExitMode
+  hotkeys: HotKey[]
 }
 export const useSettingStore = defineStore('setting', {
   state: () => {
@@ -60,6 +63,7 @@ export const useSettingStore = defineStore('setting', {
         account: {},
         visualization: false,
         exitMode: ExitMode.prompt,
+        hotkeys,
       },
       { mergeDefaults: true }
     )

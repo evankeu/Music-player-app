@@ -4,6 +4,7 @@
       <h6 class="text-h5">{{ t('common.setting') }}</h6>
       <app-settings-theme />
       <app-settings-other />
+      <app-settings-hotkeys />
       <app-settings-tips />
     </div>
   </section>
@@ -12,6 +13,7 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
 
+import AppSettingsHotkeys from './components/Hotkeys.vue'
 import AppSettingsOther from './components/Other.vue'
 import AppSettingsTheme from './components/Theme.vue'
 import AppSettingsTips from './components/Tips.vue'

@@ -73,9 +73,7 @@ export const RADARPLAYLISTS = [
   },
 ]
 
-interface Color {
-  [key: string]: string
-}
+type Color = Record<string, string>
 export function getColorTable() {
   const o = {} as Color
   Object.entries(Colors).map((color) => {
@@ -85,3 +83,57 @@ export function getColorTable() {
   })
   return o
 }
+
+// default hotkeys
+// for more info, check https://www.electronjs.org/docs/api/accelerator
+
+export interface HotKey {
+  key: string
+  name: string
+  hotkey: string
+  globalHotkey: string
+}
+export const hotkeys: HotKey[] = [
+  {
+    key: 'playpause',
+    name: '播放/暂停',
+    hotkey: 'CommandOrControl+P',
+    globalHotkey: 'Alt+CommandOrControl+P',
+  },
+  {
+    key: 'next',
+    name: '下一首',
+    hotkey: 'CommandOrControl+Right',
+    globalHotkey: 'Alt+CommandOrControl+Right',
+  },
+  {
+    key: 'previous',
+    name: '上一首',
+    hotkey: 'CommandOrControl+Left',
+    globalHotkey: 'Alt+CommandOrControl+Left',
+  },
+  {
+    key: 'increaseVolume',
+    name: '音量加',
+    hotkey: 'CommandOrControl+Up',
+    globalHotkey: 'Alt+CommandOrControl+Up',
+  },
+  {
+    key: 'decreaseVolume',
+    name: '音量减',
+    hotkey: 'CommandOrControl+Down',
+    globalHotkey: 'Alt+CommandOrControl+Down',
+  },
+  {
+    key: 'like',
+    name: '喜欢歌曲',
+    hotkey: 'CommandOrControl+L',
+    globalHotkey: 'Alt+CommandOrControl+L',
+  },
+  {
+    key: 'lyric',
+    name: '打开/关闭歌词',
+    hotkey: 'CommandOrControl+M',
+    globalHotkey: 'Alt+CommandOrControl+M',
+  },
+]
