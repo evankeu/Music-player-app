@@ -3,7 +3,7 @@ name: build
 on:
   push:
     branches:
-      - dev
+      - gh
     tags:
       - v*
   workflow_dispatch:
