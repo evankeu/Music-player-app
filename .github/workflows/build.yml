@@ -27,7 +27,7 @@ jobs:
           cache: 'npm'
 
       - name: Build/release Electron app
-        uses: samuelmeuli/action-electron-builder@v1.6.0
+        uses: Yan-Jobs/action-electron-builder@v1.7.0
         # env:
           # VUE_APP_API_DEV_ELECTRON: http://localhost:12138
           # VUE_APP_API_PRODUCT_ELECTRON: http://127.0.0.1:12138
